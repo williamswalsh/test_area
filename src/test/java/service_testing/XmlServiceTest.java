@@ -16,7 +16,7 @@ public class XmlServiceTest {
     private static final String SAMPLE_URL = "https://en.wikipedia.org/wiki/Hokusai";
 
     @Test
-    public void testHttpGetXml() throws IOException {
+    public void testHttpClientGetStatus() throws IOException {
         HttpClient client = HttpClientBuilder.create().build();
         HttpResponse response = client.execute(new HttpGet(SAMPLE_URL));
         int statusCode = response.getStatusLine().getStatusCode();
