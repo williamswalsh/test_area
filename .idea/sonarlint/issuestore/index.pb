@@ -61,5 +61,3 @@ S
 #src/test/java/money/DoubleTest.java,a/a/aabc83651792a171bd9b90b6f922eb4f6528af33
 [
 +src/test/java/collections/EmptyMapTest.java,c/b/cb7112011e7f4af5384f6e2463bcdd2feb6d31fe
-\
-,src/test/java/string_testing/StringTest.java,6/6/66b71585cf3fb2290bf318fba527d44f0a636f27

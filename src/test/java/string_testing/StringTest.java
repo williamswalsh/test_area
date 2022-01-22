@@ -2,9 +2,20 @@ package string_testing;
 
 import org.junit.Test;
 
+import java.text.MessageFormat;
+
 import static org.junit.Assert.assertEquals;
 
 public class StringTest {
+
+    @Test
+    public void stringFormatTesting() {
+        String specifiedLanguage = "fr";
+        String FALLBACK_LANG = "en";
+        String expected = "No manuals are available for the languages - chosen language: fr, region fallback language: en";
+        assertEquals(expected, MessageFormat.format("No manuals are available for the languages - chosen language: {0}, region fallback language: {1}", specifiedLanguage, FALLBACK_LANG));
+    }
+
 
     @Test
     public void substringMethodTest() {
