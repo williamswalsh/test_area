@@ -14,4 +14,11 @@ public class MathTest {
         System.out.println(Math.round(b));
         System.out.println(Math.round(c));
     }
+
+
+    @Test
+    public void testDivisionOddNumber() {
+        int x = 15/2;
+        System.out.println(x);
+    }
 }
