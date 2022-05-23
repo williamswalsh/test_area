@@ -24,8 +24,8 @@ public class JsonAnySetterTest {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = "{\"RollNo\" : \"1\",\"Name\" : \"Mark\"}";
         try {
-            Student student = mapper
-                    .readerFor(Student.class)
+            AaStudent student = mapper
+                    .readerFor(AaStudent.class)
                     .readValue(jsonString);
 
             System.out.println(student.getProperties().get("Name"));
@@ -37,9 +37,9 @@ public class JsonAnySetterTest {
     }
 }
 
-class Student {
+class AaStudent {
     private Map<String, String> properties;
-    public Student(){
+    public AaStudent(){
         properties = new HashMap<>();
     }
     public Map<String, String> getProperties(){
