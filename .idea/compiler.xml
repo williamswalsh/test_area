@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="test_area" target="11" />
-      <module name="Testing Project" target="11" />
+      <module name="test_area" target="1.8" />
+      <module name="Testing Project" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

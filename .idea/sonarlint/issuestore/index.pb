@@ -17,8 +17,6 @@ N
 src/main/java/DateTesting.java,1/5/15b785a5c885707914de7a695b892e4dab133d50
 M
 src/test/java/MapTesting.java,f/8/f84d56e344ef2202f97c238902885b50ea186096
-X
-(src/test/java/DatabaseDriverTesting.java,0/b/0b282a64e8331e9552f495ed2d70637ffe55a659
 Q
 !src/main/java/CurrentYearBug.java,4/d/4d3ee5f360688822da7ec363bb077eed79b6c7a5
 F
@@ -57,8 +55,6 @@ S
 0src/test/java/object_references/PassByValue.java,9/5/95559801a5b995fbdc657938e4be0739e09ebda5
 j
 :src/test/java/simple_date_format/SimpleDateFormatTest.java,a/0/a0fb5977094d18b40fad5d00bb02929c6546c246
-P
- src/test/java/encoding/URLs.java,1/d/1dadd0e8e6aa5c768fc27d2e49632bd9f2c0795c
 V
 &src/test/java/parsing_ints/Parser.java,7/9/79b7bf2725e12b43cb9a158b5f55457949b0214a
 V
@@ -91,8 +87,6 @@ Y
 +src/test/java/jackson/JsonRawValueTest.java,0/3/03343cef783b42fb9a395342165019f93f0ea43e
 [
 +src/test/java/jackson/JsonRootNameTest.java,c/2/c2dd372ff168f4819186100e9c97ca41f167fa8e
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 `
 0src/test/java/jackson/JsonPropertyOrderTest.java,6/6/6646b9e10b51a429102077f2a2f24a696c87d2a7
 a
@@ -119,11 +113,27 @@ Y
 )src/test/java/junit_testing/RuleTest.java,a/7/a7d8d86c364febe33ad5686190516854c1f111be
 Y
 )src/test/java/collections/AsListTest.java,c/b/cbd15b8a1b39804c322a6e3f56bce3767057cc70
-f
-6src/test/java/jce/JavaCryptographicExtensionsTest.java,1/e/1e1667c1c22bcad115db6d1596b7575dfb85f079
-L
-src/test/java/StripTest.java,d/7/d733b9c9bb0b184347956f7205fa516476d4766c
 Q
 !src/main/java/TimeComparison.java,e/5/e53e1dee1271019427b11c86902ffce96d78c669
 q
 Asrc/test/java/collections/sets/EnhancedVsIteratorPerformance.java,4/f/4f301659ae88aaf613e36acbcefb9d9f2f47df9f
+^
+.src/test/java/time/FullDateTimeFormatting.java,4/a/4ab94c7981ee850b89c815f86dc414e0e9aa630a
+Z
+*src/test/java/time/DateFormattingTest.java,7/4/745f135f0f35e063a68ffddb42d9d5a7191a292b
+V
+&src/test/java/time/DateFormatting.java,4/2/4239af1cb5340bc6dcbf1b48634ffeee411d2e37
+P
+ src/test/java/uuid/UuidTest.java,c/6/c64401cafb3d05afea850d0d1fcf2464610c0fd5
+T
+$src/test/java/regex/SimpleRegex.java,2/1/216094f9fbc57487975267d5cd3b68a4b8381612
+X
+(src/test/java/DatabaseDriverTesting.java,0/b/0b282a64e8331e9552f495ed2d70637ffe55a659
+f
+6src/test/java/jce/JavaCryptographicExtensionsTest.java,1/e/1e1667c1c22bcad115db6d1596b7575dfb85f079
+P
+ src/test/java/encoding/URLs.java,1/d/1dadd0e8e6aa5c768fc27d2e49632bd9f2c0795c
+L
+src/test/java/StripTest.java,d/7/d733b9c9bb0b184347956f7205fa516476d4766c
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec

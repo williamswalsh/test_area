@@ -12,7 +12,7 @@ public class JavaCryptographicExtensionsTest {
     public void test() throws NoSuchAlgorithmException {
         // Security.setProperty("crypto.policy", "limited"); // uncomment to switch to limited crypto policies
         System.out.println("Check for unlimited crypto policies");
-        System.out.println("Java version: " + Runtime.version());
+        // System.out.println("Java version: " + Runtime.version());
         //Security.setProperty("crypto.policy", "limited"); // muss ganz am anfang gesetzt werden !
         System.out.println("restricted cryptography: " + restrictedCryptography() + " Notice: 'false' means unlimited policies"); // false mean unlimited crypto
         System.out.println("Security properties: " + Security.getProperty("crypto.policy"));
