@@ -61,6 +61,24 @@ public class JsonIncludeTest {
         String actual = writer.writeValueAsString(student);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void nullListOnlyClassVariableTest() throws JsonProcessingException {
+        JustAList list = new JustAList(null);
+        ObjectWriter writer = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String expected = "{ }";
+        String actual = writer.writeValueAsString(list);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void nullListNoIncludeStatementTest() throws JsonProcessingException {
+        JustAList list = new JustAList(null);
+        ObjectWriter writer = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String expected = "{ }";
+        String actual = writer.writeValueAsString(list);
+        assertEquals(expected, actual);
+    }
 }
 
 // It includes all non_null inputs, i.e. it won't include null
@@ -72,4 +90,10 @@ class Student {
     private final String email;
     private final String mobileNumber;
     private final List<String> courses;
+}
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
+class JustAList {
+    private final List<String> list;
 }
