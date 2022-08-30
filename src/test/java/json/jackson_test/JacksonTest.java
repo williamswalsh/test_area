@@ -22,7 +22,7 @@ public class JacksonTest {
     }
 
     @Test
-    public void jsonToObject() throws JsonProcessingException {
+    public void jsonToObject() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         String objAsStr = "{\"numOfWheels\":4,\"cc\": null,\"ccPrimitive\": null}";
 
