@@ -1,4 +1,4 @@
-package enum_regex_validator;
+package validator.enum_regex_validator;
 
 /**
  * @author William Walsh

@@ -1,4 +1,4 @@
-package enum_regex_validator;
+package validator.enum_regex_validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
