@@ -94,3 +94,9 @@ interface AccessModifiersMethods {
 interface AreNonStaticVariablesAllowed {
     public final static int i = 9;
 }
+
+// Static methods can't be abstract
+interface CanAbstractMethodsBeStatic {
+    // Illegal combination of modifiers: 'abstract' and 'static'
+    // static abstract int getInt();
+}

@@ -33,16 +33,16 @@ public abstract class AbstractClassMembers {
     }
 
     // Concrete static methods
-    public static void publicStaticConcreteMethod() {
+    public final static void publicStaticConcreteMethod() {
         System.out.println("public static concrete method inside abstract class");
     }
-    protected static void protectedStaticConcreteMethod() {
+    protected final static void protectedStaticConcreteMethod() {
         System.out.println("protected static concrete method inside abstract class");
     }
-    static void packageStaticConcreteMethod() {
+    final static void packageStaticConcreteMethod() {
         System.out.println("package static concrete method inside abstract class");
     }
-    private static void privateStaticConcreteMethod() {
+    private final static void privateStaticConcreteMethod() {
         System.out.println("private static concrete method inside abstract class");
     }
 
