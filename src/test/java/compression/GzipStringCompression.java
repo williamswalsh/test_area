@@ -35,6 +35,12 @@ public class GzipStringCompression {
         System.out.println("String byte array length after compression: " + byteSizeAfterCompression);
     }
 
+
+    /**
+     * Compression only works for data above a certain size.
+     * For smaller data sizes the compressed data can be larger than the uncompressed data.
+     * Compression/Decompression adds a processing stage, which must be considered as a cost.
+     */
     public static String compress(String str) throws IOException {
         if (str == null || str.length() == 0) {
             return str;
