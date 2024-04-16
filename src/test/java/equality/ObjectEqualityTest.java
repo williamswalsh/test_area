@@ -4,17 +4,38 @@ import org.junit.Test;
 
 import java.util.Objects;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-public class Object {
+public class ObjectEqualityTest {
 
     @Test
-    public void testIfObjectsAreEqual() {
+    public void testIfSameObjectIsEqual() {
+        Car newCar = new Car("22KY1234","Audi", "R8");
+        assertEquals(newCar, newCar);
+    }
+
+    @Test
+    public void testIfObjectsAreNotReferentiallyEqual() {
         Car currentCar = new Car("12D60113","Volkswagon", "Golf");
         Car newCar = new Car("22KY1234","Audi", "R8");
-        assertFalse(Objects.equals(currentCar, newCar));
-        assertTrue(Objects.equals(newCar, newCar));
+
+        // Referential equality
+        assertNotEquals(currentCar, newCar);
+    }
+
+    @Test
+    public void testIfObjectsAreEqualSameValues() {
+        Car currentCar = new Car("12D60113","Volkswagon", "Golf");
+        Car newCar = new Car("12D60113","Volkswagon", "Golf");
+
+        // Same values but using referential equality (a==b)
+        assertNotEquals(currentCar, newCar);
+    }
+
+    @Test
+    public void testPassingNullAsArgument() {
+        assertNotEquals(null, "SETTLE");
+        assertEquals(null, null);
     }
 }
 
