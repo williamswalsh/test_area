@@ -3,6 +3,7 @@ package hash;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -73,7 +74,7 @@ public class HashMapTest {
     }
 
     @Test(expected = ConcurrentModificationException.class)
-    public void modifyWhileIterateKeySetTest() {
+    public void modifyHashMapWhileIterateKeySetTest() {
         Map<Integer, Boolean> map = new HashMap<>();
         map.put(1, true);
         map.put(2, false);
@@ -88,11 +89,26 @@ public class HashMapTest {
         System.out.println(map);
     }
 
+    @Test //(expected = ConcurrentModificationException.class)
+    public void modifyConcurrentHashMapWhileIterateKeySetTest() {
+        ConcurrentHashMap<Integer, Boolean> map = new ConcurrentHashMap<>();
+        map.put(1, true);
+        map.put(2, false);
+        map.put(4, true);
+        Iterator<Integer> iterator = map.keySet().iterator();
+
+        while (iterator.hasNext()) {
+            iterator.next();
+            map.remove(4);  // ConcurrentModificationException is not thrown :-)
+        }
+        System.out.println(map);
+    }
+
     /**
      * No ConcurrentModificationException exception.
      */
     @Test
-    public void modifyWhileIterateEntrySetTest() {
+    public void modifyHashMapWhileIterateEntrySetTest() {
         Map<Integer, Boolean> map = new HashMap<>();
         map.put(1, true);
         map.put(2, false);
