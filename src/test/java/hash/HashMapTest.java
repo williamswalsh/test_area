@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * When to use:
- * - for a unsynchronised/single threaded application
+ * - for an un-synchronised/single threaded application
  *
  * map.get(); - get value at key
  * map.put(); - put value at key
@@ -53,8 +53,10 @@ public class HashMapTest {
         Map<Integer, Boolean> map = new HashMap<>();
         map.put(1, true);
         map.put(2, false);
+        map.put(3, true);
+        assertEquals(3, map.size());
         map.put(null, true);    // This counts as a unique key.
-        map.put(4, true);
+
         assertEquals(4, map.size());
     }
 
@@ -83,10 +85,10 @@ public class HashMapTest {
         Iterator<Integer> iterator = map.keySet().iterator();
 
         while (iterator.hasNext()) {
+            System.out.println(map);
             iterator.next();
             map.remove(4);
         }
-        System.out.println(map);
     }
 
     @Test //(expected = ConcurrentModificationException.class)
@@ -112,7 +114,7 @@ public class HashMapTest {
         Map<Integer, Boolean> map = new HashMap<>();
         map.put(1, true);
         map.put(2, false);
-//        map.put(null, true);    // This counts as a unique key.
+//        map.put(null, true);
         map.put(4, true);
         Iterator<Map.Entry<Integer, Boolean>> iterator = map.entrySet().iterator();
 

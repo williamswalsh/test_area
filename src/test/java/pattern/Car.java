@@ -2,7 +2,6 @@ package pattern;
 
 import equality.model.Make;
 import equality.model.Model;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -24,7 +24,7 @@ public class SemaphoreTest {
         assertEquals(1, s.availablePermits());
     }
 
-    @Ignore
+    @Ignore("Will hang on statement s.acquire()")
     @Test
     public void semPermitsAcquireBlocksTest() throws InterruptedException {
         Semaphore s = new Semaphore(3); // 3 semaphores
@@ -33,9 +33,16 @@ public class SemaphoreTest {
     }
 
     @Test
-    public void semaphoreTryAcquire() throws InterruptedException {
+    public void semaphoreTryAcquireCan() {
         Semaphore s = new Semaphore(1);
-        assertTrue(s.tryAcquire()); // Try to get permit - get one if available
+        assertTrue(s.tryAcquire()); // Try to get permit - get one if available - should return true
         assertEquals(0, s.availablePermits()); // No permits left
+    }
+
+    @Test
+    public void semaphoreTryAcquireCannot() throws InterruptedException  {
+        Semaphore s = new Semaphore(1);
+        s.acquire();
+        assertFalse(s.tryAcquire()); // Try to get permit - it is unavailable.
     }
 }

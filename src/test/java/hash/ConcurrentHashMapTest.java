@@ -42,9 +42,8 @@ public class ConcurrentHashMapTest {
 
         // Removing the mapping
         // with non-existing key 10
-        // using remove() method
         valueRemoved = my_cmmap.remove("10");
-        // valueRemove = null
+        // valueRemoved = null
         // NOTE: no exception thrown!!!!! Fail-safe when removing non-existent value
 
         // Printing the map after remove()
