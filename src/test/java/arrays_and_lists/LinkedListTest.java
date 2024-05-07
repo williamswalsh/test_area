@@ -107,6 +107,4 @@ public class LinkedListTest {
         ll.remove(0);
         assertFalse(ll.contains(1));
     }
-
-
 }
