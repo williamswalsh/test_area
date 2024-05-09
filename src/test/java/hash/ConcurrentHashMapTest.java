@@ -79,6 +79,17 @@ public class ConcurrentHashMapTest {
         while (itr.hasNext()) {
             ConcurrentHashMap.Entry<Integer, String> entry
                     = itr.next();
+
+//            Can modify in-place
+            if ( entry.getKey() == 3) {
+                entry.setValue("something else");
+            }
+
+//
+            if ( entry.getKey() == 3) {
+
+            }
+
             System.out.println("Key = " + entry.getKey()
                     + ", Value = "
                     + entry.getValue());
