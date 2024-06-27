@@ -32,7 +32,7 @@ public class BinarySearchTest {
         });
     }
 
-        @Test
+    @Test
     public void searchTest() {
         List<Integer> ints = Arrays.asList(5, 10, 15, 20, 25, 30, 35, 40, 45, 49, 52, 60, 79);
 

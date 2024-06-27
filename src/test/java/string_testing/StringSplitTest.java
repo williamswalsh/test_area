@@ -12,6 +12,16 @@ import static org.junit.Assert.*;
 public class StringSplitTest {
 
     @Test
+    public void splitStringTest() {
+        String s1 = "Java,Selenium,TestNG,Karate,SQL";
+        String[] strings = s1.split(",");
+
+        for (int i=1; i<=strings.length; i++) {
+            System.out.println("String " + i + ": " + strings[i-1]);
+        }
+    }
+
+    @Test
     public void testComparison() {
         assertEquals(1, new Version("1.1.1.0").compareTo(new Version("1.1.1")));
         assertEquals(0, new Version("1.1.1.0").compareTo(new Version("1.1.1.0")));

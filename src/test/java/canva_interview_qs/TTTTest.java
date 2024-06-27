@@ -7,7 +7,7 @@ public class TTTTest {
     @Test
     public void getWinnerTest() {
         Character[][] game = new Character[][]{
-                {'o', 'x', 'x'}, {'o', 'o', 'x'}, {'o', 'x', 'o'}
+                {'o', 'x', 'x'}, {'o', 'x', 'x'}, {'o', 'x', 'o'}
         };
         System.out.println(getWinner(game));
     }
@@ -31,6 +31,13 @@ public class TTTTest {
         for (int i = 0; i < game.length; i++) {
             requiredWinAmt = game.length - 1;
             existing = null;
+
+//            Skip a row if the first space doesn't have a value.
+//            and therefore cannot be a winning row.
+            if (game[i][0] == null) {
+                continue;
+            }
+
             for (int j = 0; j < game[0].length; j++) {
 
                 curr = game[i][j];
@@ -53,28 +60,28 @@ public class TTTTest {
         }
 
 //        Columns
-//        for (int i = 0; i < game.length; i++) {
-//            requiredWinAmt = game.length - 1;
-//            existing = null; // TODO: Think about this
-//            for (int j = 0; j < game[0].length; j++) {
-//
-//                curr = game[j][i];
-//
-//                if (existing == null) {
-//                    existing = curr;
-//                } else {
-//                    if (existing != curr) {
-//                        break;
-//                    } else {
-//                        requiredWinAmt--;
-//                        if (requiredWinAmt == 0) {
-//                            // Win condition
-//                            return curr;
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        for (int i = 0; i < game.length; i++) {
+            requiredWinAmt = game.length - 1;
+            existing = null; // TODO: Think about this
+            for (int j = 0; j < game[0].length; j++) {
+
+                curr = game[j][i];
+
+                if (existing == null) {
+                    existing = curr;
+                } else {
+                    if (existing != curr) {
+                        break;
+                    } else {
+                        requiredWinAmt--;
+                        if (requiredWinAmt == 0) {
+                            // Win condition
+                            return curr;
+                        }
+                    }
+                }
+            }
+        }
 
 //        Diagonal \
         existing = null;
