@@ -11,6 +11,10 @@ public class LongestSubstring {
     abcdaghju
         s
             e
+
+    abcdefaghju
+    s
+          e
     */
     private static int longestSubString(String str) {
         Map<Character, Integer> present = new HashMap<>();
@@ -37,9 +41,21 @@ public class LongestSubstring {
     }
 
     @Test
+    public void testLongestSubStringWithAssert() {
+        assert 8 == longestSubString("abcdaghju");
+    }
+
+
+    @Test
     public void testLongestSubString() {
         assertEquals(8, longestSubString("abcdaghju"));
     }
+
+    @Test
+    public void testLongestSubStringLongestStringAtStart() {
+        assertEquals(10, longestSubString("abcdefaghju"));
+    }
+
 
     @Test
     public void testLongestSubStringSimple() {
