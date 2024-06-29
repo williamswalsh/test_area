@@ -1,48 +1,50 @@
 package tiktok_interview;
 
+import hash.HashMapTest;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
+import static org.junit.Assert.assertEquals;
+
 /*
 Given a string s,
 find the length of the longest substring without
 repeating characters.
 */
 public class Solution {
-    /*
-    abcdaghju
-        s
-            e
-    */
-    private static int longestSubString(String str) {
-        Map<Character, Integer> present = new HashMap<>();
-        int start = 0;
-        int end = 0;
-        char[] chars = str.toCharArray();
-        char currChar;
 
-        while(end < str.length()) {
-            currChar = chars[end];
-            if (present.containsKey(currChar)) {
-                // move start pointer to end
-                start = present.get(currChar) + 1;
-                // reset
-                present.clear();
+    private static int longestSubString(String s) {
+        char[] chars = s.toCharArray();
+        int left = 0;
+        int maxLength = 0;
+        Set<Character> present = new LinkedHashSet<>();
+
+        for(int right = 0; right < chars.length; right++) {
+            if (!present.contains(chars[right])) {
+                present.add(chars[right]);
+                maxLength = Math.max(maxLength, right - left + 1);
             } else {
-                // Add char to list
-                present.put(currChar, end);
-                // Increment ptr
-                end++;
+
+//                Key piece of code - Start
+                while(present.contains(chars[right])) {
+                    present.remove(chars[left]);
+                    left++;
+                }
+                present.add(chars[right]);
+//                Key piece of code - END
             }
         }
-        return end - start;
+        return maxLength;
     }
 
     @Test
-    public void testIoForlongestSubString() {
+    public void testLongestSubString() {
+        assert 3  == longestSubString("abcabcbb");
+        assert 2  == longestSubString("abba");
         assert 8  == longestSubString("abcdaghju");
         assert 10 == longestSubString("abcdefaghju");
+        assert 7 == longestSubString("abcdefeghijki");
         assert 3  == longestSubString("abc");
         assert 1  == longestSubString("a");
         assert 2  == longestSubString("ab");
