@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ImageManipulationTest {
 
@@ -27,7 +28,7 @@ public class ImageManipulationTest {
     @Test
     public void isImageSizeInvalidTest() {
         boolean result = isImageSizeInvalid(base64ImageStr);
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
 

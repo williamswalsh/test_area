@@ -7,7 +7,8 @@ Hashtable:
 - is synchronised
 - doesn't allow null k or v. 
 
-# HashTable & Synchronised HashMap
+# Synchronised HashMap
+- This is just a HashMap that has an object level lock.
 - N.B.: Is thread safe BUT performance isn't as good as a Concurrent HashMap!
 - ***Locks entire hashmap***
 - Structure:
