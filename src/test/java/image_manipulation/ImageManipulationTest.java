@@ -1,4 +1,4 @@
-package images;
+package image_manipulation;
 
 import org.apache.commons.codec.binary.Base64;
 import org.junit.Before;
